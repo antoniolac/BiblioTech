@@ -10,7 +10,6 @@ Per installare docker:[ https://docs.docker.com/desktop/setup/install/windows-in
 
 (è conisgliiato informarsi sul concetto di container)
 
-
 Il progetto per funzionare sfrutta le seguenti tecnologie:
 
 * Docker, per lo sviluppo
@@ -22,8 +21,6 @@ Il progetto per funzionare sfrutta le seguenti tecnologie:
 * 
 
 ****ho realizzato l'html da solo, mentre inizialemente il css con gemini, (non avevo voglia), poi per curiosità, ho passato entrambi a claude.ai che mi ha migliorato tanto, forse anche troppo il tutto, ma la base della struttura è mia giuro, ci sono le committttttttt (odio la gui), il php l ho fatto io documentandomi per le prepared query***
-
-
 
 Come prima cosa bisogna clonare il repository o scaricare la zip del proggetto dalla piattaforma [github.com/antoniolac/BiblioTech]()
 
@@ -37,7 +34,6 @@ Avendo caricato il .env non si sono bisogno di modifiche, lì dove inserite le a
 
 Consiglio di aprire il proggetto in vscode e di scaricare le estensioni per php e sql
 
-
 In seguito, bisogna aprire docker desktop e lasciarla in background
 
 Poi su vscode, aprire il docker-compose.yaml, e aprire il terminale integrato per digitare:
@@ -47,7 +43,6 @@ Poi su vscode, aprire il docker-compose.yaml, e aprire il terminale integrato pe
 questo comando serve per creare il server e i vari container, per cancellarlo in caso di modifiche al docker-compose:
 
    *docker-compose down -v*
-
 
 A questo punto il gioco è fatto, per accedere al server bisogna prima di tutto accedere a phpMyAdmin tramite
 
@@ -65,9 +60,19 @@ mentre MailPit:
 
 **Diveriti con la Biblioteca Digitale!**
 
-
 ****se vuoi provare il menu admin oltre quello utente, fai l'accesso con queste credenziali:***
 
 ***email: admin@bibliotech.edu.it***
 
 ***pwd: admin1234***
+
+
+   **mi sono ricordato che l'account admin lo avevo inserito manualemente tramite phpMyAdmin, selezionando il DB, e cliccando sulla voce SQL e scrivendo la seguente query:
+
+    INSERT INTO utenti (username, email, password, ruolo)
+VALUES (
+    'admin',
+    'admin@bibliotech.edu.it',
+    '$2y$10$fTEWFRL851NHuwM1w2gMAOvRQl271aWnhU/O6zcJQk7XAafr9gCIW',
+    'admin'
+);
